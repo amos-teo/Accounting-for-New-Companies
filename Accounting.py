@@ -117,21 +117,30 @@ profit_loss = profit_loss.append([gross_profit,operating_profit,tax_payable,prof
 #balance sheet
 balance_sheet = t_account_balance[t_account_balance['group'] == 'balance_sheet']
 
+
+
 #append tax payable into balance sheet
-balance_sheet = balance_sheet.append([tax_payable_balance_sheet,profit_after_tax_balance_sheet], ignore_index = True )
+balance_sheet = balance_sheet.append([tax_payable_balance_sheet], ignore_index = True )
 
 #Add grouping to balance sheet
 balance_sheet['asset_grouping'] = balance_sheet['T_Account_Name'].map(custom_dict_balance_sheet)
+
 #Convert negative credit values to positive values
 balance_sheet['Balance'] = np.where( balance_sheet['asset_grouping'] == 'Equity', abs(balance_sheet['Balance']), balance_sheet['Balance'])
 balance_sheet['Balance'] = np.where( balance_sheet['asset_grouping'] == 'Liabilities', abs(balance_sheet['Balance']), balance_sheet['Balance'])
+
+#append Retained Earnings into balance sheet
+balance_sheet = balance_sheet.append([profit_after_tax_balance_sheet], ignore_index = True )
+
+#Add grouping to balance sheet
+balance_sheet['asset_grouping'] = balance_sheet['T_Account_Name'].map(custom_dict_balance_sheet)
 
 #sort balance sheet by asset grouping Asset--> Equity --> Liabilities
 balance_sheet = balance_sheet.sort_values('asset_grouping')
 
 #drop ranking and group
 profit_loss = profit_loss.drop(columns = ['ranking','group']).rename(columns= {'T_Account_Name': 'P&L Category'})
-#balance_sheet = balance_sheet.drop(columns = ['group']).rename(columns= {'T_Account_Name': 'Category'})
+balance_sheet = balance_sheet.drop(columns = ['group']).rename(columns= {'T_Account_Name': 'Category'})
 
 #Export Financial Statements to Excel
 with pd.ExcelWriter('FS_BS.xlsx') as writer:
