@@ -1,6 +1,6 @@
 # Accounting-for-Startups
-This contains a code an sample transaction data, and code to convert into the Balance Sheet and Profit &amp; Loss Statement
+This script will generate the P&L since inception, balance sheet as of a certain date, inventory in various warehouses or entities, and also a complete list of journal entries for a simple company with various shopfronts and a warehouse.
 
-This script will create the balance sheet for a company that has just been incorporated for the first year.
+If more balance sheet categories are present, please map them manually in the script so that the result appears in the order A--> E --> L.
 
-More versions to come along, year-to-year including P&L generation and updating of accounting balances, inventory management and financial ratios and analytics
+Underlying assumption is that the transaction list will be updated accurately.
