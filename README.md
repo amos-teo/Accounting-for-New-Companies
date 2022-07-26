@@ -3,4 +3,4 @@ This script will generate the P&L since inception, balance sheet as of a certain
 
 If more balance sheet categories are present, please map them manually in the script so that the result appears in the order A--> E --> L.
 
-Underlying assumption is that the transaction list will be updated accurately.
+Underlying assumption is that the transaction list will be updated accurately until the input date for which you want to generate the statements for. 
