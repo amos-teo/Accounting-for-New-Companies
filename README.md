@@ -6,3 +6,5 @@ If more balance sheet categories are present, please map them manually in the sc
 Underlying assumption is that the transaction list will be updated accurately until the input date for which you want to generate the statements for. 
 
 Average costing methodology is used for calculating inventory cost value.
+
+Sample data is provided which showcases how data should be kept from the Finance team.
