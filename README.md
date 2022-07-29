@@ -7,4 +7,4 @@ Underlying assumption is that the transaction list will be updated accurately un
 
 Average costing methodology is used for calculating inventory cost value.
 
-Sample data is provided which showcases how data should be kept from the Finance team.
+Sample data is provided which showcases how data should be kept.
