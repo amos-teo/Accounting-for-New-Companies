@@ -7,4 +7,6 @@ Underlying assumption is that the transaction list is updated accurately until t
 
 Average costing methodology is used for calculating inventory cost value.
 
+Manual inputs in the code are needed to sort t-accounts out into Assets, Liabilities, and Equity.
+
 Sample data is provided which showcases how data should be kept.
